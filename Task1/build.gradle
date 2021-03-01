@@ -2,6 +2,14 @@ plugins {
     id 'java'
 }
 
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = 'nsu.ru.edubinskaya.ConstantPool.CLI'
+}
+
 repositories {
     mavenCentral()
 }
