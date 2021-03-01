@@ -1,2 +1,2 @@
-CLI.java
- CLI
+nsu/ru/edubinskaya/ConstantPool/CLI.java
+ nsu.ru.edubinskaya.ConstantPool.CLI
