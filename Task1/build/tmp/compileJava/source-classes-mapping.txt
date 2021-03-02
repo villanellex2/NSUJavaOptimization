@@ -1,2 +1,3 @@
 nsu/ru/edubinskaya/ConstantPool/CLI.java
  nsu.ru.edubinskaya.ConstantPool.CLI
+ nsu.ru.edubinskaya.ConstantPool.ConstantPoolLine
