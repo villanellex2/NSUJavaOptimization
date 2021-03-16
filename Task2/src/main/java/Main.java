@@ -47,11 +47,11 @@ class Main implements Opcodes {
             mv.visitVarInsn(ILOAD, 4);
             mv.visitVarInsn(ILOAD, 2);
             Label l1 = new Label();
-            mv.visitJumpInsn(IF_ICMPEQ, l1);
+            mv.visitJumpInsn(IF_ICMPEQ, l1); // если var 2 == var 4 (рандомное и считанное) прыгаем в l1
             mv.visitVarInsn(ILOAD, 4);
             mv.visitVarInsn(ILOAD, 2);
             Label l2 = new Label();
-            mv.visitJumpInsn(IF_ICMPLE, l2);
+            mv.visitJumpInsn(IF_ICMPLE, l2); // если меньше - Lower. Иначе - в l3
             mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
             mv.visitLdcInsn("Lower");
             mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println", "(Ljava/lang/String;)V", false);
