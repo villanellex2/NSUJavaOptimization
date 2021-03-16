@@ -1,3 +1,3 @@
 ```
-gradle run & java -pathToThisFolder Main
+gradle run & java Main
 ```
