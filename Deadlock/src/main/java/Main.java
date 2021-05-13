@@ -1,39 +1,48 @@
 public class Main {
 
+    static final CountDownLatch latch = new CountDownLatch(2);
+    static final Object lock = new Object();
+
     public static void main(String[] args) {
-        Object lock1 = new Object();
-        Object lock2 = new Object();
-        lockedThread thread = new lockedThread(lock1, lock2);
-        lockedThread thread2 = new lockedThread(lock2, lock1);
-        thread.start();
+        Thread thread1 = new DThread();
+        Thread thread2 = new DThread();
+        thread1.start();
         thread2.start();
-        try {
-            thread.join();
-            thread2.join();
-        }
-        catch (InterruptedException ignored){}
     }
 
-    private static class lockedThread extends Thread {
-        final Object obj1;
-        final Object obj2;
+    private static class DThread extends Thread {
 
-        lockedThread(Object obj1, Object obj2) {
-            this.obj1 = obj1;
-            this.obj2 = obj2;
+        @Override
+        public void run() {
+            synchronized (lock) {
+                latch.countDown();
+                try {
+                    latch.await();
+                } catch (InterruptedException ignored) {}
+            }
+        }
+    }
+
+    private static class CountDownLatch {
+        private int count;
+
+        public CountDownLatch(int count) {
+            this.count = count;
         }
 
-        public void run() {
-            synchronized (obj1) {
-                System.out.println(this + " get first obj " + obj1);
-
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException ignored) {
+        public void await() throws InterruptedException {
+            synchronized (this) {
+                if (count > 0) {
+                    this.wait();
                 }
+            }
+        }
 
-                synchronized (obj2) {
-                    System.out.println(this + " get second obj " + obj2);
+        public void countDown() {
+            synchronized (this) {
+                count--;
+                if (count == 0) {
+                    this.notifyAll();
                 }
             }
         }
