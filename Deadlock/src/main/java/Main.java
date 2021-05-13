@@ -15,6 +15,7 @@ public class Main {
         @Override
         public void run() {
             synchronized (lock) {
+                System.out.println(Thread.currentThread().toString() +  "get a lock");
                 latch.countDown();
                 try {
                     latch.await();
@@ -32,6 +33,7 @@ public class Main {
 
         public void await() throws InterruptedException {
             synchronized (this) {
+                System.out.println(Thread.currentThread().toString() +  "await");
                 if (count > 0) {
                     this.wait();
                 }
