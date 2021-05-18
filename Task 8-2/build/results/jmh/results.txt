@@ -1,0 +1,7 @@
+Benchmark             (test_string)  Mode  Cnt     Score    Error  Units
+Tests.testCharacters       13472956  avgt   15    19.995 ±  1.647  ns/op
+Tests.testCharacters       134729zz  avgt   15    16.837 ±  1.709  ns/op
+Tests.testException        13472956  avgt   15    17.068 ±  2.154  ns/op
+Tests.testException        134729zz  avgt   15  1152.177 ± 78.103  ns/op
+Tests.testRegex            13472956  avgt   15   173.773 ± 14.479  ns/op
+Tests.testRegex            134729zz  avgt   15   181.553 ± 13.213  ns/op

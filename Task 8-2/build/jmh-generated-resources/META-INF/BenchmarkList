@@ -1,0 +1,3 @@
+JMH S 16 benchmarks.Tests S 53 benchmarks.jmh_generated.Tests_testCharacters_jmhTest S 14 testCharacters S 11 AverageTime E A 1 1 1 E E E E I 1 3 E E E E E E E E M 1 11 test_string 2 24 xAwMAQDA3AgMAkDA1AgNAA== 24 xAwMAQDA3AgMAkDA6BgeAA== U 11 NANOSECONDS E E 
+JMH S 16 benchmarks.Tests S 52 benchmarks.jmh_generated.Tests_testException_jmhTest S 13 testException S 11 AverageTime E A 1 1 1 E E E E I 1 3 E E E E E E E E M 1 11 test_string 2 24 xAwMAQDA3AgMAkDA1AgNAA== 24 xAwMAQDA3AgMAkDA6BgeAA== U 11 NANOSECONDS E E 
+JMH S 16 benchmarks.Tests S 48 benchmarks.jmh_generated.Tests_testRegex_jmhTest S 9 testRegex S 11 AverageTime E A 1 1 1 E E E E I 1 3 E E E E E E E E M 1 11 test_string 2 24 xAwMAQDA3AgMAkDA1AgNAA== 24 xAwMAQDA3AgMAkDA6BgeAA== U 11 NANOSECONDS E E 
